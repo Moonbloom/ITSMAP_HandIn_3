@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ActionBar -->
+    <color name="ActionBarColor">#FF388E3C</color>
+    <color name="ActionBarTitleColor">#FFFFFFFF</color>
+    <color name="ActionBarSubtitleColor">#FFFFFFFF</color>
+
+</resources>

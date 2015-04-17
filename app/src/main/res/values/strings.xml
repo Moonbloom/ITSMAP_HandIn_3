@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">HI3_201206094</string>
+
+    <string name="main_title">ITSMAP HandIn 3</string>
+
+    <string name="button_text">Start service</string>
+    <string name="edittext_hint">Numbers &#8230;</string>
+
+</resources>
