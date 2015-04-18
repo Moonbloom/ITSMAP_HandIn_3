@@ -2,9 +2,22 @@
 
     <string name="app_name">HI3_201206094</string>
 
-    <string name="main_title">ITSMAP HandIn 3</string>
+    <string name="actionbar_title">ITSMAP HandIn 3</string>
+    <string name="actionbar_subtitle_main">Main Activity</string>
+    <string name="actionbar_subtitle_second">Second Activity</string>
 
     <string name="button_text">Start service</string>
-    <string name="edittext_hint">Numbers &#8230;</string>
+    <string name="edittext_text_hint">Input text to send</string>
+    <string name="edittext_number_hint">Input time to wait</string>
+
+    <string name="no_current_text_input_error">Please input a text</string>
+    <string name="no_current_number_input_error">Please input an amount</string>
+
+    <string name="on_create">onCreate() called</string>
+    <string name="on_start">onStart() called</string>
+    <string name="on_resume">onResume() called</string>
+    <string name="on_pause">onPause() called</string>
+    <string name="on_stop">onStop() called</string>
+    <string name="on_destroy">onDestroy() called</string>
 
 </resources>
