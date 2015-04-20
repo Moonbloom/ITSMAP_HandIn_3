@@ -32,6 +32,7 @@ public class MyService extends Service {
 
     @Override
     public void onDestroy() {
+        //Unregister receiver and cancel countdown when destroying the service
         unregisterReceiver(broadcastReceiver);
         countDownTimer.cancel();
     }
@@ -51,12 +52,14 @@ public class MyService extends Service {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + waitTime, pendingIntent);
 
+        //Start the timer that is used to send feedback back to the MainActivity
         final int offset = 100;
         countDownTimer = new CountDownTimer(waitTime + offset, 250) {
             @Override
             public void onTick(long millisUntilFinished) {
                 Log.d(TAG, "onTick");
 
+                //Calculate the percentage that has been waited
                 double done = (waitTime + offset) - (int)millisUntilFinished;
                 double percentDoneDouble = (done / waitTime) * 100;
                 int percentDone = (int) percentDoneDouble;
@@ -71,6 +74,7 @@ public class MyService extends Service {
             }
 
             private void sendLocalBroadcast(int percentDone) {
+                //Broadcast the update intent with the percentage as an extra
                 Intent intent = new Intent(MainActivity.localBroadcastUpdateMsg);
                 intent.putExtra(MainActivity.localBroadcastUpdatePercentExtra, percentDone);
                 LocalBroadcastManager.getInstance(MyService.this).sendBroadcast(intent);

@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
@@ -32,6 +33,7 @@ public class MainActivity extends Activity {
 
     private Intent serviceIntent;
 
+    @InjectView(R.id.main_activity_button) Button button;
     @InjectView(R.id.main_activity_text_edittext) EditText textEditText;
     @InjectView(R.id.main_activity_number_edittext) EditText numberEditText;
     @InjectView(R.id.progressbar) ProgressBar progressBar;
@@ -45,10 +47,13 @@ public class MainActivity extends Activity {
         }
 
         //Check for valid number input
-        if(TextUtils.isEmpty(numberEditText.getText().toString())) {
+        if(TextUtils.isEmpty(numberEditText.getText().toString()) || Integer.valueOf(numberEditText.getText().toString()) == 0) {
             Boast.makeText(this, getString(R.string.no_current_number_input_error), Boast.Level.Warning);
             return;
         }
+
+        //Make button inactive (to stop several services from going off at once)
+        button.setClickable(false);
 
         //Hide keyboard
         InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -94,8 +99,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
         progressBar.setVisibility(View.GONE);
         progressBar.setProgress(0);
+
+        button.setClickable(true);
 
         createLog(getString(R.string.on_resume));
     }
@@ -133,9 +141,15 @@ public class MainActivity extends Activity {
         BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
+                createLog(getString(R.string.on_receive));
+
                 int percentDone = intent.getIntExtra(localBroadcastUpdatePercentExtra, 0);
                 progressBar.setVisibility(View.VISIBLE);
                 progressBar.setProgress(percentDone);
+
+                if(percentDone == 100) {
+                    button.setClickable(true);
+                }
             }
         };
 

@@ -11,7 +11,7 @@
     <string name="edittext_number_hint">Input time to wait</string>
 
     <string name="no_current_text_input_error">Please input a text</string>
-    <string name="no_current_number_input_error">Please input an amount</string>
+    <string name="no_current_number_input_error">Please input a valid amount</string>
 
     <string name="on_create">onCreate() called</string>
     <string name="on_start">onStart() called</string>
@@ -19,5 +19,6 @@
     <string name="on_pause">onPause() called</string>
     <string name="on_stop">onStop() called</string>
     <string name="on_destroy">onDestroy() called</string>
+    <string name="on_receive">onReceive() called</string>
 
 </resources>

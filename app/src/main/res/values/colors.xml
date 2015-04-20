@@ -6,4 +6,11 @@
     <color name="ActionBarTitleColor">#FFFFFFFF</color>
     <color name="ActionBarSubtitleColor">#FFFFFFFF</color>
 
+    <!-- Material colors -->
+    <color name="MaterialGreen">#FF388E3C</color>
+    <color name="MaterialBlue">#FF2196F3</color>
+    <color name="MaterialYellow">#FFFFEB3B</color>
+    <color name="MaterialRed">#FFF44336</color>
+    <color name="MaterialDarkGreen">#FF1B5E20</color>
+
 </resources>
