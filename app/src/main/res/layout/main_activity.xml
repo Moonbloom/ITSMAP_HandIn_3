@@ -26,7 +26,9 @@
 
         <EditText
             android:id="@+id/main_activity_number_edittext"
-            android:inputType="number"
+            android:inputType="number|phone"
+            android:digits="0123456789"
+            android:maxLength="3"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:hint="@string/edittext_number_hint"
