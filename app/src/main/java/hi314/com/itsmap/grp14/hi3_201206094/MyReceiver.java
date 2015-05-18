@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import hi314.com.itsmap.grp14.hi3_201206094.utilities.Boast;
+import com.moonbloom.boast.Boast;
 
 public class MyReceiver extends BroadcastReceiver {
 

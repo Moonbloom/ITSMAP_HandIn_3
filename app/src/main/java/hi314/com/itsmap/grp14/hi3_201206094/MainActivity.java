@@ -16,10 +16,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
+import com.moonbloom.boast.BStyle;
+import com.moonbloom.boast.Boast;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import hi314.com.itsmap.grp14.hi3_201206094.utilities.Boast;
 
 public class MainActivity extends Activity {
 
@@ -42,13 +44,13 @@ public class MainActivity extends Activity {
     public void serviceButtonClick() {
         //Check for valid text input
         if(TextUtils.isEmpty(textEditText.getText().toString())) {
-            Boast.makeText(this, getString(R.string.no_current_text_input_error), Boast.Level.Warning);
+            Boast.makeText(this, getString(R.string.no_current_text_input_error), BStyle.ALERT);
             return;
         }
 
         //Check for valid number input
         if(TextUtils.isEmpty(numberEditText.getText().toString()) || Integer.valueOf(numberEditText.getText().toString()) == 0) {
-            Boast.makeText(this, getString(R.string.no_current_number_input_error), Boast.Level.Warning);
+            Boast.makeText(this, getString(R.string.no_current_number_input_error), BStyle.ALERT);
             return;
         }
 

@@ -1,6 +1,7 @@
 <resources>
 
-    <string name="app_name">HI3_201206094</string>
+    <string name="app_name">ITSMAP HandIn 3</string>
+    <!--<string name="app_name">HI3_201206094</string>-->
 
     <string name="actionbar_title">ITSMAP HandIn 3</string>
     <string name="actionbar_subtitle_main">Main Activity</string>
